@@ -21,10 +21,13 @@ public class ExchangeValue {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String from_my;
+    // Из какой валюты
+    private String one;
 
-    private String to_my;
+    // В которую валюту
+    private String two;
 
     private BigDecimal conversionMultiple;
+
     private int port;
 }

@@ -12,7 +12,8 @@ public class ExchangeValueService {
         this.exchangeValueRepo = exchangeValueRepo;
     }
 
-    public void add(ExchangeValue value) {
-        exchangeValueRepo.save(value);
+
+    public ExchangeValue findByOneAndTwo(String from, String to) {
+        return exchangeValueRepo.findByOneAndTwo(from, to);
     }
 }

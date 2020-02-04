@@ -6,4 +6,5 @@ import ru.microservice.currrencyexchangeservice.domain.ExchangeValue;
 
 @Repository
 public interface ExchangeValueRepo extends JpaRepository<ExchangeValue, Long> {
+    ExchangeValue findByOneAndTwo(String one, String two);
 }
