@@ -1,14 +1,9 @@
 package ru.microservice.currrencyexchangeservice.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
@@ -16,16 +11,18 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Entity
 @Builder
+@EqualsAndHashCode
+@ToString
 public class ExchangeValue {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    // Из какой валюты
-    private String one;
+    @Column(name="currency_from")
+    private String from;
 
-    // В которую валюту
-    private String two;
+    @Column(name="currency_to")
+    private String to;
 
     private BigDecimal conversionMultiple;
 

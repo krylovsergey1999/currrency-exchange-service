@@ -13,7 +13,7 @@ public class ExchangeValueService {
     }
 
 
-    public ExchangeValue findByOneAndTwo(String from, String to) {
-        return exchangeValueRepo.findByOneAndTwo(from, to);
+    public ExchangeValue findByFromAndTo(String from, String to) {
+        return exchangeValueRepo.findByFromAndTo(from, to);
     }
 }
